@@ -17,3 +17,6 @@ C:\Users\sotni\source\repos\HandBook\HandBook\bin\Debug\EntityFramework.xml
 C:\Users\sotni\source\repos\HandBook\HandBook\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\sotni\source\repos\HandBook\HandBook\bin\Debug\System.Data.SQLite.xml
 C:\Users\sotni\source\repos\HandBook\HandBook\obj\Debug\HandBook.csproj.CopyComplete
+C:\Users\sotni\source\repos\HandBook\HandBook\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\sotni\source\repos\HandBook\HandBook\bin\Debug\Newtonsoft.Json.dll
+C:\Users\sotni\source\repos\HandBook\HandBook\bin\Debug\Newtonsoft.Json.xml

@@ -9,12 +9,12 @@ using System.Windows.Forms;
 
 namespace HandBook.DAL
 {
-    class SqliteHelper
+    class SqliteHelperTrans
     { 
         public static void Refresh(BindingSource bsWord)
         {
             List<WordFull>  _list = new List<WordFull>();
-            List<WordFull>  list = DAL.SqliteHelper.GetWords();
+            List<WordFull>  list = DAL.SqliteHelperTrans.GetWords();
             if (list != null && list.Count > 0)
             {
                 _list.AddRange(list);
@@ -101,7 +101,7 @@ namespace HandBook.DAL
             return null;
         }
          public static void Search(DataGridView dgw, BindingSource bsWord, string searchString)
-        {
+         {
             dgw.Rows.Clear();
             using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=C:\\Users\sotni\\OneDrive\\Рабочий стол\\dataBase.db"))
             {
