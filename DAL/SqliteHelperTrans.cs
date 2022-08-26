@@ -61,7 +61,41 @@ namespace HandBook.DAL
             }
         }
 
+        internal static List<WordFull> GetWords2()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(@"DataSource=C:\\Users\sotni\\OneDrive\\Рабочий стол\\dataBase.db"))
+                {
+                    connection.Open();
+                    string query = @"SELECT * from words2";
 
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        using (var reader = command.ExecuteReader())
+                        {
+                            List<WordFull> words = new List<WordFull>();
+
+                            while (reader.Read())
+                            {
+                                words.Add(new WordFull
+                                {
+                                    Id = reader.GetInt32(0),
+                                    Word = reader.GetString(1),
+                                    Translation = reader.GetString(2)
+
+                                });
+                            }
+
+                            return words;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            return null;
+        }
 
         internal static List<WordFull> GetWords()
         {

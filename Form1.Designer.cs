@@ -261,6 +261,7 @@ namespace HandBook
             this.textBoxWord.Name = "textBoxWord";
             this.textBoxWord.Size = new System.Drawing.Size(150, 24);
             this.textBoxWord.TabIndex = 2;
+            this.textBoxWord.TextChanged += new System.EventHandler(this.textBoxWord_TextChanged);
             // 
             // label2
             // 

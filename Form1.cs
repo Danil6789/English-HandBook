@@ -179,7 +179,7 @@ namespace HandBook
                     player.controls.play();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Голос этого слова не найден", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -187,8 +187,28 @@ namespace HandBook
 
             
         }
+        public string changeText(string word, List<DAL.WordFull> list)
+        {
+            foreach (var item in list)
+            {
+                string value = item.Word.Trim(' ');
+                if (word == value)
+                {
+                    string result = item.Translation.Trim(' ');
+                    return result;
+                }
+              
+            }
+            return "";
+        }
 
+        private void textBoxWord_TextChanged(object sender, EventArgs e)
+        {
+            string word = textBoxWord.Text;
+            List<DAL.WordFull> list = DAL.SqliteHelperTrans.GetWords2();
 
-      
+            string translation = changeText(word, list);
+            textBoxTrans.Text = translation;
+        }
     }
 }
